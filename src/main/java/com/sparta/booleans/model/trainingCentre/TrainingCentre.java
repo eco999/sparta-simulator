@@ -2,9 +2,14 @@ package com.sparta.booleans.model.trainingCentre;
 
 import com.sparta.booleans.exceptions.CapacityExceededException;
 import com.sparta.booleans.model.trainee.Trainee;
+import com.sparta.booleans.utility.logging.CustomLoggerConfiguration;
+
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public abstract class TrainingCentre {
+    public Logger logger = CustomLoggerConfiguration.myLogger;
 
     // Fields
     protected int capacity;
@@ -61,6 +66,7 @@ public abstract class TrainingCentre {
         if (currentTrainees.size() > capacity) {
 
             currentTrainees.remove(100);
+            logger.log(Level.SEVERE,"CapacityExceededException when adding to currentTrainees ArrayList");
             throw new CapacityExceededException();
         }
     }

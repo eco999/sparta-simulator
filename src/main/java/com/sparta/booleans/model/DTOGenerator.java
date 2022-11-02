@@ -2,6 +2,8 @@ package com.sparta.booleans.model;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import java.util.stream.Stream;
 
 import com.sparta.booleans.model.trainee.Trainee;
@@ -9,8 +11,10 @@ import com.sparta.booleans.model.trainingCentre.Bootcamp;
 import com.sparta.booleans.model.trainingCentre.Hub;
 import com.sparta.booleans.model.trainingCentre.TechCentre;
 import com.sparta.booleans.model.trainingCentre.TrainingCentre;
+import com.sparta.booleans.utility.logging.CustomLoggerConfiguration;
 
 public class DTOGenerator {
+    public static Logger logger = CustomLoggerConfiguration.myLogger;
 
     public static MappedDTO generateDTO(int month, ArrayList<Trainee> waitingList, ArrayList<TrainingCentre> trainingCentres) {
 
@@ -21,6 +25,7 @@ public class DTOGenerator {
         HashMap<TrainingCentreType, Integer> closedCentres = new HashMap<>();
         HashMap<TrainingCentreType, Integer> fullCentres = new HashMap<>();
 
+        logger.log(Level.FINER,"Looping through all training centres get count");
         for (TrainingCentre centre: trainingCentres) {
             TrainingCentreType type;
             if (centre instanceof TechCentre) {
@@ -30,6 +35,7 @@ public class DTOGenerator {
             } else if (centre instanceof Hub) {
                 type = TrainingCentreType.TRAINING_HUB;
             } else {
+                logger.log(Level.WARNING,"Incorrect training centre type");
                 type = TrainingCentreType.TRAINING_CENTRE;
             }
 
@@ -47,7 +53,7 @@ public class DTOGenerator {
 
     private static HashMap<CourseType, Integer> getTraineeCountByCourse(ArrayList<Trainee> trainees) {
         HashMap<CourseType, Integer> traineeMap = new HashMap<>();
-
+        logger.log(Level.FINER,"Looping through all trainees to get count");
         for (CourseType course: CourseType.values()) {
             long traineeCount = trainees.stream()
                     .filter(e -> e.getCourseType() == course)

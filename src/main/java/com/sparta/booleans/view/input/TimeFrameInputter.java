@@ -2,12 +2,16 @@ package com.sparta.booleans.view.input;
 
 import com.sparta.booleans.exceptions.InvalidTimeFrameMonthException;
 import com.sparta.booleans.exceptions.NegativeIntInputException;
+import com.sparta.booleans.utility.logging.CustomLoggerConfiguration;
 
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 //how many years and dates they want
 
 public class TimeFrameInputter implements Inputable{
+    public Logger logger = CustomLoggerConfiguration.myLogger;
     //how many years and dates they want
     @Override
     public int getInputInt() {
@@ -19,7 +23,7 @@ public class TimeFrameInputter implements Inputable{
                 throw new NegativeIntInputException();
             }
         }catch (NegativeIntInputException e){
-            System.out.println(e.getMessage());
+            logger.log(Level.WARNING,e.getMessage());
             System.out.println("Re-enter a number: ");
             input = getInputInt();
         }
@@ -51,7 +55,7 @@ public class TimeFrameInputter implements Inputable{
                 throw new InvalidTimeFrameMonthException();
             }
         }catch (InvalidTimeFrameMonthException e){
-            System.out.println(e.getMessage());
+            logger.log(Level.WARNING,e.getMessage());
             input = getMonths();
         }
         return input;
