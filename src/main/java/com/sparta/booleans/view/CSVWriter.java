@@ -1,6 +1,8 @@
 package com.sparta.booleans.view;
 
 import com.sparta.booleans.model.DTO;
+import com.sparta.booleans.model.MappedDTO;
+import com.sparta.booleans.model.TrainingCentreType;
 import com.sparta.booleans.utility.logging.CustomLoggerConfiguration;
 
 import java.io.*;
@@ -26,6 +28,16 @@ public class CSVWriter implements OutputInterface {
         }
         logger.log(Level.INFO, " Simulation Data has been accepted into ");
         acceptSimulationData(simulationData);
+    }
+
+    @Override
+    public void sendOutput(MappedDTO simulationData) {
+
+    }
+
+    private void acceptSimulationData(MappedDTO simulationData) {
+        List<String> data = new ArrayList<>();
+        data.add(String.valueOf(simulationData.getOpenCentres().get(TrainingCentreType.TECH_CENTRE).intValue()));
     }
 
     // Takes a list of DTOs, one for each contiguous run of the simulation
