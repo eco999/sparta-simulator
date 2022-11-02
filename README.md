@@ -127,6 +127,7 @@ Trello was the kanban board of choice as it provided a useful user-friendly inte
 Below is an image of Boo-Leans' kanban board:
 
 ![trello board](https://user-images.githubusercontent.com/115146708/199549971-900da146-3f70-41a0-9ff5-6079c3543509.png)
+<<<<<<< HEAD
 
 Acceptance criteria were written on each user story card and reviewed together as a group.
 Boo-Leans used planning poker to agree on the level of difficulty of each user story before being commissioned.
@@ -220,17 +221,19 @@ Trello was the kanban board of choice as it provided a useful user-friendly inte
 Below is an image of Boo-Leans' kanban board:
 
 ![](../../Pictures/trello board.png)
+=======
+>>>>>>> 449cc48a58b1dd5d135df90c1d7b7b4cf3254fe6
 
 Acceptance criteria were written on each user story card and reviewed together as a group.
 Boo-Leans used planning poker to agree on the level of difficulty of each user story before being commissioned.
 The user stories where then assigned to either an individual or pair depending on difficulty and added to the user story card.
 
-![](../../Pictures/user story.png)
+![user story](https://user-images.githubusercontent.com/115146708/199549868-ee5cb24c-7f83-44e5-9ea3-271718b8a838.png)
 
 BooLeans also created a UML diagram using Lucid, to create a visual representation of the program.
 Here is an image of Boo-Leans' UML diagram:
 
-![](../../Pictures/Lucid board.png)
+![Lucid board](https://user-images.githubusercontent.com/115146708/199550021-2df35dea-3214-49d7-b571-f0453f6bac4e.png)
 
 ***
 
