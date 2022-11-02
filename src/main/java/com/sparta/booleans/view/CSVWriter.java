@@ -28,8 +28,8 @@ public class CSVWriter implements OutputInterface {
         acceptSimulationData(simulationData);
     }
 
-    // Takes a list of DTOs, one for each contiguous run of the simulation
-    // Converts each DTO to a line (String)
+    // Takes a DTO object and adds the string representation of its field values into a String list
+    // adds this String list to the static field list of lists of this class.
     private void acceptSimulationData(DTO simulationData) {
         List<String> data = new ArrayList<>();
 
