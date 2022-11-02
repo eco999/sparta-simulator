@@ -284,3 +284,5 @@ At the end of sprint 1, Booleans produced a minimum viable product to the client
 ## Future Development
 
 For future improvements we would like to implement a user-friendly UI to view the data.<br>
+
+checking if merge conflict is resolved
