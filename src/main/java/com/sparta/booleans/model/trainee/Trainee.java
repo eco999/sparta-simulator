@@ -19,7 +19,7 @@ public class Trainee implements TraineeInterface {
         this.isTraining = false;
         this.startTrainingMonth = -1;
         GenerateCourse generateCourse = new GenerateCourse();
-        this.courseType = generateCourse.generateCourse(courseType);
+        this.courseType = generateCourse.generateCourse();
     }
 
     @Override
