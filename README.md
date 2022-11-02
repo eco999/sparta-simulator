@@ -126,7 +126,7 @@ Trello was the kanban board of choice as it provided a useful user-friendly inte
 
 Below is an image of Boo-Leans' kanban board:
 
-![alt text](trello board.png)
+![My Image](thttps://github.com/yoyesu/sparta-simulator/blob/b895bccb1a0a8247f64b8bd677a749a18475d9d0/Lucid%20board.png)
 
 Acceptance criteria were written on each user story card and reviewed together as a group.
 Boo-Leans used planning poker to agree on the level of difficulty of each user story before being commissioned.
