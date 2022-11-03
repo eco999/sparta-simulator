@@ -20,23 +20,38 @@ public class Simulator {
     private static int traineeID = 1;
     private static int centreID = 1;
     private static int month = -1;
+<<<<<<< HEAD
     private static int numberOfBootcamps = 0;
+=======
+>>>>>>> dev
     private static WaitingList waitingList = WaitingList.getWaitingList();
     private static ArrayList<TrainingCentre> trainingCentres = new ArrayList<>();
 
     public static MappedDTO runSimulation(int months) {
+<<<<<<< HEAD
 
 
         for (int i = 0; i < months; i++) {
             month++;
 
+=======
+        for (int i = 0; i < months; i++) {
+            month++;
+
+>>>>>>> dev
             Trainee[] trainees = generateTrainees(month);
             waitingList.add(trainees);
 
             generateTrainingCentre();
+<<<<<<< HEAD
 
             closeTrainingCentres();
 
+=======
+
+            closeTrainingCentres();
+
+>>>>>>> dev
             int totalIntake = generateTrainingCentreMonthlyIntake();
 
             int centerIndex = 0;
@@ -59,6 +74,11 @@ public class Simulator {
                         } catch (CapacityExceededException e) {
                             waitingList.addToFront(trainee);
                         } catch (TraineeNotFoundException e) {
+<<<<<<< HEAD
+=======
+                            totalIntake -= centre.getMonthlyIntake();
+                            centre.setMonthlyIntake(0);
+>>>>>>> dev
                         }
                     }
                     centerIndex++;
@@ -70,7 +90,11 @@ public class Simulator {
                 }
             }
         }
+<<<<<<< HEAD
         return DTOGenerator.generateDTO(month, waitingList.toArrayList(), trainingCentres);
+=======
+        return DTOGenerator.generateDTO(month + 1, waitingList.toArrayList(), trainingCentres);
+>>>>>>> dev
     }
 
     private static Trainee[] generateTrainees(int month) {
@@ -95,7 +119,11 @@ public class Simulator {
     private static int generateTrainingCentreMonthlyIntake() {
         int totalIntake = 0;
         for (TrainingCentre centre : trainingCentres) {
+<<<<<<< HEAD
             if (!centre.isFull()) {
+=======
+            if (!centre.isFull() && !centre.getIsClosed()) {
+>>>>>>> dev
                 int monthlyIntake = Randomizer.getRandomCentreIntake();
                 if (monthlyIntake > centre.getVacancies()) {
                     monthlyIntake = centre.getVacancies();
@@ -111,7 +139,11 @@ public class Simulator {
 
     private static void closeTrainingCentres() {
         for (TrainingCentre centre : trainingCentres) {
+<<<<<<< HEAD
             if (centre.shouldBeClosed()) {
+=======
+            if (centre.shouldBeClosed(month)) {
+>>>>>>> dev
                 for (Trainee trainee : centre.getCurrentTrainees()) {
                     waitingList.add(trainee);
                 }

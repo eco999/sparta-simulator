@@ -35,7 +35,11 @@ public class WaitingList  {
             return poll();
         }
 
+<<<<<<< HEAD
         while (node != null) {
+=======
+        while (node.getTail() != null) {
+>>>>>>> dev
             Node<Trainee> compare = node.getTail();
             if (compare.getElement().getCourseType() == type) {
                 node.setTail(compare.getTail());

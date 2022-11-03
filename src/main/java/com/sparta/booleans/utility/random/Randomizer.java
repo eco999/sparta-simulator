@@ -1,6 +1,11 @@
 package com.sparta.booleans.utility.random;
 
+import com.sparta.booleans.exceptions.CourseTypeNotFound;
+import com.sparta.booleans.model.CourseType;
+
 import java.util.Random;
+
+import static com.sparta.booleans.model.CourseType.*;
 
 public class Randomizer {
 
@@ -23,10 +28,18 @@ public class Randomizer {
         return newCentreIntake;
     }
 
-    public static int getRandomCourse () {
+    public static CourseType generateCourse() throws CourseTypeNotFound {
+
         Random random = new Random();
-        int newCourseType = random.nextInt(6);
-        return newCourseType;
+        switch (random.nextInt(CourseType.values().length)) {
+
+            case 0 -> {return JAVA;}
+            case 1 -> {return CSHARP;}
+            case 2 -> {return DATA;}
+            case 3 -> {return DEVOPS;}
+            case 4 -> {return BUSINESS;}
+            default -> throw new CourseTypeNotFound();
+        }
     }
 
     public static int getRandomCentre () {
